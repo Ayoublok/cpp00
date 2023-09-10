@@ -6,7 +6,7 @@
 /*   By: ayylaaba <ayylaaba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 15:33:21 by ayylaaba          #+#    #+#             */
-/*   Updated: 2023/09/10 16:30:41 by ayylaaba         ###   ########.fr       */
+/*   Updated: 2023/09/10 21:48:01 by ayylaaba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,35 +23,60 @@ class Contact
         std::string phone_number;
     public:
         void            catch_contact(int c, std::string str);
-//        std::string     display_contact(int c);
+		std::string 	get_intfo(int c);
+		Contact		creat_contact()
+		{
+			Contact NewContact;
+			NewContact.first_name = get_intfo(0);
+			NewContact.first_name = get_intfo(1);
+			NewContact.first_name = get_intfo(2);
+			NewContact.first_name = get_intfo(3);
+			return (NewContact);
+		}
         void            display_contact(int c);
 };
 
+class	PhoneBook
+{
+	private:
+		Contact contact[8];
+	public:
+		void	add_contact(int i)
+		{
+			if (i < 8)
+				contact[i] = contact->creat_contact();
+            else 
+            {
+                //....
+            }
+		}
+};
+
+std::string    Contact::get_intfo(int c)
+{    
+    if (c == 0)
+        return (first_name);
+    if (c == 1)
+        return (last_name);
+    if (c == 2)
+        return (nick_name);
+    if (c == 3)
+        return (darksecret);
+    return (0);
+}
 
 void    Contact::catch_contact(int c, std::string str)
 {    
     if (c == 0)
         first_name = str;
-    else if (c == 1)
+    if (c == 1)
         last_name = str;
-    else if (c == 2)
+    if (c == 2)
         nick_name = str;
-    else if (c == 3)
+    if (c == 3)
         darksecret = str;
 }
 
-// std::string    Contact::display_contact(int c)
-// {
-//     if (c == 0)
-//         return (first_name);
-//     else if (c == 1)
-//         return (last_name);
-//     else if (c == 2)
-//         return(nick_name);
-//     else if (c == 3)
-//        return (phone_number);
-//     return (0);
-// }
 void    Contact::display_contact(int c)
 {
     if (c == 0)
@@ -92,6 +117,12 @@ int     main()
     std::string type_line;
     std::string li;
     Contact     data;
+    PhoneBook   add;
+	int			i;
+	int			j;
+    
+	j = 0;
+    i = 0;
     while (1)
     {
         std::cout<<"\nEntre the command : ";
@@ -106,11 +137,14 @@ int     main()
             data.catch_contact(2, type_line);
             type_line = check_fill_field("Entre the darkset secret : ", data);
             data.catch_contact(3, type_line);
+			add.add_contact(i);
+			i++;
             display_all(data);
         }
         else if (!line.compare("SEARCH"))
         {
-            // MOST TO FILL.
+            
         }
+
     }
 }
