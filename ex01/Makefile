@@ -5,24 +5,25 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ayylaaba <ayylaaba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/04 18:26:13 by ayylaaba          #+#    #+#              #
-#    Updated: 2023/09/14 13:17:46 by ayylaaba         ###   ########.fr        #
+#    Created: 2023/09/13 15:40:59 by ayylaaba          #+#    #+#              #
+#    Updated: 2023/09/14 13:20:10 by ayylaaba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+
+NAME = phonebook
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
+CXXFLAGS = -Wall -Wextra -Werror
 
-SRCS = 	megaphone.cpp \
+SRC =  phonebook.cpp\
 
-OBJ = ${SRCS:.cpp=.o}
+OBJ = ${SRC:.cpp=.o}
 
 all : ${NAME}
 
-${NAME} : ${OBJ} 
+${NAME} : ${OBJ}
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean :
