@@ -6,7 +6,7 @@
 #    By: ayylaaba <ayylaaba@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/13 15:40:59 by ayylaaba          #+#    #+#              #
-#    Updated: 2023/09/14 13:20:10 by ayylaaba         ###   ########.fr        #
+#    Updated: 2023/09/18 16:50:51 by ayylaaba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,9 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror
 
-SRC =  phonebook.cpp\
+SRC =	PhoneBook.cpp	\
+		Contact.cpp		\
+		main.cpp		\
 
 OBJ = ${SRC:.cpp=.o}
 

@@ -6,7 +6,7 @@
 /*   By: ayylaaba <ayylaaba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:02:29 by ayylaaba          #+#    #+#             */
-/*   Updated: 2023/09/14 15:45:55 by ayylaaba         ###   ########.fr       */
+/*   Updated: 2023/09/18 15:55:54 by ayylaaba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ int     main(int ac, char **av)
             {
                 if (islower(av[i][j]))
                 {
-                    c = std::toupper(av[i][j]); // fun c++ END OF LINE 
+                    c = std::toupper(av[i][j]);
                     std::cout << c;
                 }
                 else
                     std::cout << av[i][j];
-                j++; 
+                j++;
             }
             i++;
         }
